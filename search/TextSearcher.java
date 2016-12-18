@@ -51,8 +51,7 @@ public class TextSearcher {
 	 */
 	public String[] search(String queryWord,int contextWords) {
 		ArrayList<String> result = new ArrayList<>();
-		// "((?:[a-zA-Z'-]+[^a-zA-Z'-]+[.]*){0,%d}\\b)%s(\\b(?:[^a-zA-Z'-]+[a-zA-Z'-]+[.]*){0,%d})"
-		String output = String.format("((?:[a-zA-Z'-]+[^a-zA-Z'-]+[.]*){0,%d}\\b)%s(\\b(?:[^a-zA-Z'-]+[a-zA-Z'-]+[.]*){0,%d})", contextWords, queryWord, contextWords);
+		String output = String.format("((?:[a-zA-Z']+[^a-zA-Z']+[.]*){0,%d}\\b)%s(\\b(?:[^a-zA-Z']+[a-zA-Z']+[.]*){0,%d})", contextWords, queryWord, contextWords);
 		TextTokenizer tokenizer = new TextTokenizer(this.fileString, output);
 		while (tokenizer.hasNext()) {
 			String word = tokenizer.next();
