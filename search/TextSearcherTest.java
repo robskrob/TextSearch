@@ -83,7 +83,6 @@ public class TextSearcherTest {
 		File file = new File("files/long_excerpt.txt");
 		TextSearcher searcher = new TextSearcher(file);
 		String[] results = searcher.search("1844", 2);
-		System.out.print(" the results" + Arrays.toString(results));
 		assertArraysEqual(expected, results);
 	}
 
@@ -176,7 +175,6 @@ public class TextSearcherTest {
 		File file = new File("files/short_excerpt.txt");
 		TextSearcher searcher = new TextSearcher(file);
 		String[] results = searcher.search("that", 3);
-		System.out.print(" the results" + Arrays.toString(results));
 		assertArraysEqual(expected, results);
 	}
 

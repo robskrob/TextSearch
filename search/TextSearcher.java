@@ -55,7 +55,6 @@ public class TextSearcher {
 		TextTokenizer tokenizer = new TextTokenizer(this.fileString, output);
 		while (tokenizer.hasNext()) {
 			String word = tokenizer.next();
-
 			if (tokenizer.isWord(word)) {
 				result.add(word);
 			}
@@ -63,16 +62,6 @@ public class TextSearcher {
 
 		return result.toArray(new String[result.size()]);
 	}
-
-	public static void main(String[] args) {
-		try {
-			TextSearcher searcher = new TextSearcher(new File("/Users/robertjewell/Downloads/TextSearchProblemSol/out/production/TextSearchProblem/files/long_excerpt.txt"));
-			searcher.search("naturalists", 3);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
-
 }
 
 
