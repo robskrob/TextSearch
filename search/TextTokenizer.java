@@ -84,9 +84,11 @@ public class TextTokenizer implements Iterator<String> {
 	
 	private void retrieveNext() {
 		if (matcher == null) return;
+
 		if (matcher.find()) {
 			int wordStart = matcher.start();
 			int wordEnd = matcher.end();
+
 			nextWord = input.substring(wordStart,wordEnd);
 			if (wordStart > prevWordEnd) {
 				nextPunctuation = input.substring(prevWordEnd,wordStart);
